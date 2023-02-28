@@ -1,0 +1,1 @@
+interface is struct that specify has function that declared

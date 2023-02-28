@@ -1,0 +1,146 @@
+ottopoint request 
+  login request
+    Header()
+    Payload()
+  register request
+    Header()
+    Payload()
+  activation request
+    Header()
+    Payload()
+  checkBalance request
+    Header()
+    Payload()
+  earningPoint request
+    Header()
+    Payload()
+  earningCheckStatus request
+    Header()
+    Payload()
+  callback request
+    Header()
+    Payload()
+  spendingSplitBill request
+    Header()
+    Payload()
+  reversal request
+    Header()
+    Payload()
+
+type Ottopoint struct {
+  login 
+  register 
+  activation 
+  checkBalance 
+  earningPoint 
+  earningCheckStatus 
+  callback 
+  spendingSplitBill 
+  reversal 
+}
+
+
+================================================================
+LOGIN
+================================================================
+  type Login struct {
+
+  }
+
+  type LoginHeader struct {
+
+  }
+
+  type LoginPayload struct {
+    
+  }
+
+  func (l *Login) Header() []byte {
+    
+    var (
+      resultBytes []byte
+      err error
+    )
+
+    result := LoginHeader{
+      Name:    "James",
+      SurName: "Camara",
+    }
+
+    resultBytes, err = json.Marshal(result)
+    if err != nil {
+      print(err)
+      return
+    }
+
+    return resultBytes
+  }
+
+  func (l *Login) Payload() []byte {
+
+     var (
+      resultBytes []byte
+      err error
+    )
+
+    result := LoginPayload{
+      Name:    "James",
+      SurName: "Camara",
+    }
+
+    resultBytes, err = json.Marshal(result)
+    if err != nil {
+      print(err)
+      return
+    }
+
+    return resultBytes
+  }
+
+================================================================
+REGISTER
+================================================================
+
+ type Register struct {
+
+  }
+
+  type RegisterHeader struct {
+
+  }
+
+  type RegisterPayload struct {
+    
+  }
+
+  func (l *Register) Header() []byte {
+    return []byte(&RegisterHeader)
+  }
+
+  func (l *Register) Payload() []byte {
+    return []byte(&RegisterPayload)
+  }
+
+================================================================
+ACTIVATION
+================================================================
+
+ type Activation struct {
+
+  }
+
+  type ActivationHeader struct {
+
+  }
+
+  type ActivationPayload struct {
+    
+  }
+
+  func (l *Activation) Header() []byte {
+    return []byte(&ActivationHeader)
+  }
+
+  func (l *Activation) Payload() []byte {
+    return []byte(&ActivationPayload)
+  }
